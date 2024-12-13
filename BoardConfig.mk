@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-
+COMMON_PATH := device/lenovo/X306FC
 
 # Architecture
 TARGET_ARCH := arm64
@@ -54,7 +54,7 @@ BOARD_MKBOOTIMG_ARGS := \
 	--dtb $(TARGET_PREBUILT_DTB) \
 	--dtb_offset $(BOARD_DTB_OFFSET)
 
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(COMMON_PATH)/bootimg.mk
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -121,5 +121,5 @@ BOARD_LENOVO_DYNAMIC_PARTITIONS_SIZE := 4517810176
 BOARD_LENOVO_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
 
 # Decryption Fix for Some ROMs
-BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
-    --prop com.android.build.boot.os_version:$(PLATFORM_VERSION) \
+#BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
+    --prop com.android.build.boot.os_version: REL \
